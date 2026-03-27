@@ -1,154 +1,112 @@
 /* ======================================================
-   1. RESET E CONFIGURAÇÕES GERAIS
+   BASE & TEMA DARK
    ====================================================== */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
     font-family: 'Roboto', sans-serif; 
-    line-height: 1.6; 
-    background-color: #0e1117; /* Fundo idêntico ao dashboard */
+    background-color: #0e1117; /* Fundo oficial */
     color: #ffffff; 
+    line-height: 1.6;
 }
 
-.container { 
-    width: 90%; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-}
-
-/* ======================================================
-   2. HERO SECTION (BANNER INICIAL)
-   ====================================================== */
-.hero { 
-    background: linear-gradient(135deg, #1b1f2a 0%, #0e1117 100%); 
-    padding: 120px 0; 
-    text-align: center; 
-    border-bottom: 1px solid #2d323e;
-}
-
-.hero h1 { 
-    font-size: 3rem; 
-    margin-bottom: 20px; 
-    font-weight: 800;
-}
-
-.hero p { 
-    font-size: 1.2rem; 
-    color: #9da5b4; 
-    margin-bottom: 30px; 
-}
-
-.cta-button { 
-    background-color: #ff6b6b; 
-    color: #fff; 
-    padding: 15px 35px; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    font-weight: bold; 
-    transition: 0.3s; 
-    display: inline-block;
-}
-
-.cta-button:hover { 
-    background-color: #ff4757; 
-    transform: translateY(-3px);
-}
-
-/* ======================================================
-   3. SEÇÃO DE PORTFÓLIO (CARDS DE MÍDIA)
-   ====================================================== */
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
 .section { padding: 80px 0; }
+h2 { text-align: center; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 2px; }
 
-.section h2 { 
-    font-size: 2.2rem; 
-    margin-bottom: 50px; 
-    text-align: center; 
-    text-transform: uppercase;
-    letter-spacing: 2px;
+/* ======================================================
+   SISTEMA DE GRIDS (CORRIGE A DESFIGURAÇÃO)
+   ====================================================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: stretch; /* Garante altura igual em todos os cards da linha */
 }
 
-.cards { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 30px; 
-}
-
-/* O CARD ESTILO DASHBOARD */
-.card { 
-    background-color: #1b1f2a; 
-    border-radius: 12px; 
+/* ======================================================
+   CARD PADRONIZADO (SERVIÇOS E PROJETOS)
+   ====================================================== */
+.card {
+    background-color: #1b1f2a; /* Cor oficial dos cards */
     border: 1px solid #2d323e;
-    overflow: hidden; 
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.card:hover { 
-    transform: translateY(-10px); 
+.card:hover {
+    transform: translateY(-8px);
     border-color: #4e5564;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* ÁREA DA IMAGEM/VÍDEO */
+/* --- MÍDIA FIXA (PROJETOS) --- */
 .card-media {
     width: 100%;
-    height: 220px; 
-    overflow: hidden;
+    height: 200px; /* Altura rígida para uniformidade */
     background-color: #000;
-    position: relative;
+    overflow: hidden;
 }
 
 .media-content {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a mídia preencha o espaço */
-    transition: transform 0.5s ease;
+    object-fit: cover; /* Não distorce a imagem/vídeo */
 }
 
-.card:hover .media-content {
-    transform: scale(1.1);
+/* --- CONTEÚDO DE TEXTO --- */
+.card h3 {
+    padding: 20px 20px 10px 20px;
+    font-size: 1.3rem;
+    color: #ffffff;
 }
 
-/* CONTEÚDO DO TEXTO NO CARD */
-.card h3 { 
-    padding: 20px 20px 10px 20px; 
-    color: #ffffff; 
-    font-size: 1.4rem;
-}
-
-.card p { 
-    padding: 0 20px 25px 20px; 
-    color: #9da5b4; 
-    font-size: 1rem;
+.card p {
+    padding: 0 20px 25px 20px;
+    color: #9da5b4;
+    font-size: 0.95rem;
+    flex-grow: 1; /* Empurra o card para preencher o fundo caso o texto seja curto */
 }
 
 /* ======================================================
-   4. ANIMAÇÕES DE SCROLL (FADE/SLIDE)
+   FORMULÁRIO DE CONTATO (AJUSTE DE VISUAL)
    ====================================================== */
-/* Começam invisíveis e o JS adiciona .in-view */
-.fade-in, .slide-in { 
-    opacity: 0; 
-    transition: all 0.8s ease-out; 
+form { 
+    max-width: 600px; 
+    margin: 0 auto; 
+    display: grid; 
+    gap: 15px; 
 }
 
-.fade-in { transform: translateY(30px); }
-.slide-in { transform: translateX(-40px); }
-
-.in-view { 
-    opacity: 1 !important; 
-    transform: translate(0, 0) !important; 
+form input, form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #2d323e;
+    background-color: #1b1f2a;
+    color: white;
+    width: 100%;
 }
+
+form button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover { background-color: #357abd; }
 
 /* ======================================================
-   5. RESPONSIVIDADE
+   RESPONSIVIDADE
    ====================================================== */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.2rem; }
+    .hero h1 { font-size: 2rem; }
     .cards { grid-template-columns: 1fr; }
-    .container { width: 95%; }
 }
