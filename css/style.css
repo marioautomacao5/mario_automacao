@@ -75,3 +75,14 @@ form button { cursor:pointer; }
     object-fit: cover; /* garante que a mídia preencha o card sem deformar */
     display: block;
 }
+
+/* Centralizar textos específicos */
+#sobre p,
+#contato p {
+    text-align: center;
+}
+
+#sobre h2,
+#contato h2 {
+    text-align: center;
+}
