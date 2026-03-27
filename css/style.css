@@ -17,6 +17,16 @@ body { font-family: 'Roboto', sans-serif; line-height:1.6; color:#333; }
 .bg-light { background-color:#f8f9fa; }
 .section h2 { font-size:2rem; margin-bottom:40px; text-align:center; }
 
+#sobre p {
+    text-align: center;      /* Centraliza o texto horizontalmente */
+    max-width: 700px;        /* Define uma largura máxima confortável para leitura */
+    margin: 0 auto;          /* Centraliza o bloco do parágrafo na página */
+    font-size: 1.2rem;       /* Tamanho levemente maior para destaque */
+    color: #9da5b4;          /* Tom de cinza claro consistente com o dashboard */
+    line-height: 1.8;        /* Melhora o espaçamento entre linhas */
+    padding: 0 20px;         /* Garante um respiro nas laterais em dispositivos móveis */
+}
+
 /* Cards */
 .cards { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
 .card { background-color:#fff; padding:30px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.08); flex:1 1 300px; max-width:350px; text-align:center; transition: transform 0.3s; }
