@@ -40,3 +40,23 @@ form button { cursor:pointer; }
 .fade-in { opacity:0; transform: translateY(20px); transition: all 0.8s ease-out; }
 .slide-in { opacity:0; transform: translateX(-30px); transition: all 0.8s ease-out; }
 .in-view { opacity:1; transform:translate(0,0); }
+
+.card-media {
+    width: 100%;
+    height: 180px; /* Altura fixa para manter o alinhamento dos cards */
+    overflow: hidden;
+    border-radius: 8px; /* Arredonda as bordas da mídia */
+    margin-bottom: 15px;
+    background-color: #f0f0f0; /* Cor de fundo caso a imagem falhe */
+}
+
+.media-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a mídia preencher o espaço sem distorcer */
+    transition: transform 0.3s ease;
+}
+
+.card:hover .media-content {
+    transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
+}
