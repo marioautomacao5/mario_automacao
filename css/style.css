@@ -1,154 +1,69 @@
 /* ======================================================
-   1. RESET E CONFIGURAÇÕES GERAIS
+   GRID DOS CARDS (O Padrão de Alinhamento)
    ====================================================== */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
-
-body { 
-    font-family: 'Roboto', sans-serif; 
-    line-height: 1.6; 
-    background-color: #0e1117; /* Fundo idêntico ao dashboard */
-    color: #ffffff; 
-}
-
-.container { 
-    width: 90%; 
-    max-width: 1200px; 
-    margin: 0 auto; 
+.cards {
+    display: grid;
+    /* Força colunas de tamanhos iguais */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: stretch; /* Garante que todos os cards da mesma linha tenham a mesma altura */
 }
 
 /* ======================================================
-   2. HERO SECTION (BANNER INICIAL)
+   ESTRUTURA DO CARD
    ====================================================== */
-.hero { 
-    background: linear-gradient(135deg, #1b1f2a 0%, #0e1117 100%); 
-    padding: 120px 0; 
-    text-align: center; 
-    border-bottom: 1px solid #2d323e;
-}
-
-.hero h1 { 
-    font-size: 3rem; 
-    margin-bottom: 20px; 
-    font-weight: 800;
-}
-
-.hero p { 
-    font-size: 1.2rem; 
-    color: #9da5b4; 
-    margin-bottom: 30px; 
-}
-
-.cta-button { 
-    background-color: #ff6b6b; 
-    color: #fff; 
-    padding: 15px 35px; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    font-weight: bold; 
-    transition: 0.3s; 
-    display: inline-block;
-}
-
-.cta-button:hover { 
-    background-color: #ff4757; 
-    transform: translateY(-3px);
-}
-
-/* ======================================================
-   3. SEÇÃO DE PORTFÓLIO (CARDS DE MÍDIA)
-   ====================================================== */
-.section { padding: 80px 0; }
-
-.section h2 { 
-    font-size: 2.2rem; 
-    margin-bottom: 50px; 
-    text-align: center; 
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.cards { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 30px; 
-}
-
-/* O CARD ESTILO DASHBOARD */
-.card { 
-    background-color: #1b1f2a; 
-    border-radius: 12px; 
+.card {
+    background-color: #1b1f2a;
     border: 1px solid #2d323e;
-    overflow: hidden; 
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Organiza Mídia em cima, Texto embaixo */
+    height: 100%; /* Força o card a preencher a altura da linha do Grid */
+    transition: transform 0.3s ease;
 }
 
-.card:hover { 
-    transform: translateY(-10px); 
-    border-color: #4e5564;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* ÁREA DA IMAGEM/VÍDEO */
+/* ======================================================
+   PADRONIZAÇÃO DA MÍDIA (Imagem e Vídeo)
+   ====================================================== */
 .card-media {
     width: 100%;
-    height: 220px; 
+    height: 200px; /* ALTURA PADRÃO FIXA PARA TODOS OS CARDS */
+    min-height: 200px;
     overflow: hidden;
-    background-color: #000;
+    background-color: #000; /* Fundo preto para evitar faixas vazias */
     position: relative;
 }
 
+/* Força tanto a Imagem quanto o Vídeo a respeitarem o quadro */
 .media-content {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a mídia preencha o espaço */
-    transition: transform 0.5s ease;
-}
-
-.card:hover .media-content {
-    transform: scale(1.1);
-}
-
-/* CONTEÚDO DO TEXTO NO CARD */
-.card h3 { 
-    padding: 20px 20px 10px 20px; 
-    color: #ffffff; 
-    font-size: 1.4rem;
-}
-
-.card p { 
-    padding: 0 20px 25px 20px; 
-    color: #9da5b4; 
-    font-size: 1rem;
+    object-fit: cover; /* CORTA A IMAGEM/VÍDEO PARA PREENCHER O QUADRO SEM DISTORCER */
+    display: block;
 }
 
 /* ======================================================
-   4. ANIMAÇÕES DE SCROLL (FADE/SLIDE)
+   CONTEÚDO DE TEXTO
    ====================================================== */
-/* Começam invisíveis e o JS adiciona .in-view */
-.fade-in, .slide-in { 
-    opacity: 0; 
-    transition: all 0.8s ease-out; 
+.card h3 {
+    padding: 15px 20px 5px 20px;
+    font-size: 1.2rem;
+    color: #ffffff;
 }
 
-.fade-in { transform: translateY(30px); }
-.slide-in { transform: translateX(-40px); }
-
-.in-view { 
-    opacity: 1 !important; 
-    transform: translate(0, 0) !important; 
+.card p {
+    padding: 0 20px 20px 20px;
+    font-size: 0.95rem;
+    color: #9da5b4;
+    flex-grow: 1; /* Faz o texto ocupar o espaço restante, empurrando o card para baixo */
 }
 
 /* ======================================================
-   5. RESPONSIVIDADE
+   RESPONSIVIDADE
    ====================================================== */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.2rem; }
-    .cards { grid-template-columns: 1fr; }
-    .container { width: 95%; }
+@media (max-width: 480px) {
+    .card-media {
+        height: 180px; /* Reduz um pouco em telas de celular */
+    }
 }
