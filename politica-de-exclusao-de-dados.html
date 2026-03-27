@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Exclusão de Dados | Seu Negócio Digital</title>
+<title>Guia de Exclusão de Dados | Seu Negócio Digital</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: #f4f6f8; color: #222; }
@@ -28,43 +28,32 @@ pre { background: #e5e7eb; padding: 15px; border-radius: 8px; overflow-x: auto; 
 <p><strong>Última atualização:</strong> <span id="data"></span></p>
 
 <h2>1. Objetivo</h2>
-<p>Esta página serve para orientar clientes sobre como solicitar a exclusão de dados pessoais coletados por nossas soluções digitais, como landing pages, chatbots ou formulários de captura de leads, garantindo conformidade com a LGPD.</p>
+<p>Esta página serve para orientar clientes sobre como funciona a exclusão de dados pessoais coletados por nossas soluções digitais, como landing pages, chatbots ou formulários de captura de leads, garantindo transparência e conformidade com a LGPD.</p>
 
-<h2>2. Solicitação de exclusão de dados</h2>
-<p>Os clientes podem solicitar a exclusão de dados de duas maneiras:</p>
+<h2>2. Responsabilidade da exclusão</h2>
+<p>A exclusão de dados é de responsabilidade do <strong>administrador do sistema</strong> de cada projeto. Todo projeto que captura dados possui um painel administrativo (“Admin Panel”) que permite gerenciar e excluir leads diretamente. </p>
+<p>Portanto, quaisquer solicitações de exclusão devem ser feitas diretamente ao <strong>usuário administrador do sistema</strong> associado ao projeto.</p>
+
+<h2>3. Como o administrador pode excluir dados</h2>
+<p>O painel administrativo permite ao usuário administrador:</p>
 <ul>
-<li>Enviando uma requisição formal ao nosso suporte via e-mail: <strong>suporte@seudominio.com</strong></li>
-<li>Utilizando o endpoint de exclusão disponibilizado em suas integrações (para desenvolvedores e sistemas automatizados).</li>
+<li>Visualizar todos os leads capturados</li>
+<li>Buscar leads por e-mail ou ID</li>
+<li>Excluir leads individualmente ou em lote</li>
+<li>Gerar logs da ação de exclusão para comprovação de conformidade</li>
 </ul>
 
-<h2>3. Exemplo de endpoint para exclusão</h2>
-<p>Para clientes que usam chatbots ou APIs, disponibilizamos o seguinte endpoint:</p>
+<h2>4. Endpoint de exclusão (para integração)</h2>
+<p>Para administradores que usam APIs ou chatbots integrados, existe um endpoint seguro disponível:</p>
 <pre><code>DELETE /api/leads/{email}</code></pre>
-<p>Substitua <code>{email}</code> pelo e-mail do lead que deseja excluir. Esta chamada remove o registro permanentemente do banco de dados.</p>
-
-<h3>Exemplo de requisição via JavaScript (fetch):</h3>
-<pre><code>fetch('https://seudominio.com/api/leads/cliente@exemplo.com', {
-    method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' }
-})
-.then(response =&gt; {
-    if(response.ok) {
-        alert('Lead excluído com sucesso!');
-    } else {
-        alert('Falha ao excluir lead.');
-    }
-})
-.catch(error =&gt; console.error(error));</code></pre>
-
-<h2>4. Confirmação e logs</h2>
-<p>Após a exclusão, será gerado apenas um registro de ação (log), sem armazenar os dados pessoais do lead, garantindo rastreabilidade e conformidade legal.</p>
+<p>Substitua <code>{email}</code> pelo e-mail do lead que deseja excluir. Esta ação remove permanentemente o registro do banco de dados.</p>
 
 <h2>5. Prazo de atendimento</h2>
-<p>Todas as solicitações de exclusão serão processadas dentro de 5 dias úteis após recebimento da requisição.</p>
+<p>Após solicitação de exclusão ao administrador, os dados devem ser removidos imediatamente via painel ou conforme procedimento interno do projeto, garantindo eficiência e conformidade legal.</p>
 
 <h2>6. Contato</h2>
-<p>Para dúvidas adicionais ou suporte sobre exclusão de dados, entre em contato:</p>
-<p><strong>Email:</strong> suporte@seudominio.com</p>
+<p>Se houver dúvidas sobre como solicitar a exclusão, entre em contato diretamente com o administrador do sistema do projeto ou com nosso suporte geral:</p>
+<p><strong>Email do suporte:</strong> suporte@seudominio.com</p>
 
 <div class="footer">
 <p>© 2026 Seu Negócio Digital – Todos os direitos reservados</p>
