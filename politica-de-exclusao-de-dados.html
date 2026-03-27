@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Exclusão de Dados | Seu Negócio Digital</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: #f4f6f8; color: #222; }
+.header { background: #0f172a; color: white; padding: 40px 20px; text-align: center; }
+.header h1 { margin: 0; font-size: 32px; }
+.container { max-width: 950px; margin: auto; background: white; padding: 40px; margin-top: -30px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+h2 { margin-top: 35px; color: #111827; }
+p, ul, code { line-height: 1.7; color: #374151; }
+code { background: #e5e7eb; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+pre { background: #e5e7eb; padding: 15px; border-radius: 8px; overflow-x: auto; }
+.footer { margin-top: 50px; text-align: center; font-size: 14px; color: #6b7280; }
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>Guia de Exclusão de Dados</h1>
+<p>Seu Negócio Digital</p>
+</div>
+
+<div class="container">
+
+<p><strong>Última atualização:</strong> <span id="data"></span></p>
+
+<h2>1. Objetivo</h2>
+<p>Esta página serve para orientar clientes sobre como solicitar a exclusão de dados pessoais coletados por nossas soluções digitais, como landing pages, chatbots ou formulários de captura de leads, garantindo conformidade com a LGPD.</p>
+
+<h2>2. Solicitação de exclusão de dados</h2>
+<p>Os clientes podem solicitar a exclusão de dados de duas maneiras:</p>
+<ul>
+<li>Enviando uma requisição formal ao nosso suporte via e-mail: <strong>suporte@seudominio.com</strong></li>
+<li>Utilizando o endpoint de exclusão disponibilizado em suas integrações (para desenvolvedores e sistemas automatizados).</li>
+</ul>
+
+<h2>3. Exemplo de endpoint para exclusão</h2>
+<p>Para clientes que usam chatbots ou APIs, disponibilizamos o seguinte endpoint:</p>
+<pre><code>DELETE /api/leads/{email}</code></pre>
+<p>Substitua <code>{email}</code> pelo e-mail do lead que deseja excluir. Esta chamada remove o registro permanentemente do banco de dados.</p>
+
+<h3>Exemplo de requisição via JavaScript (fetch):</h3>
+<pre><code>fetch('https://seudominio.com/api/leads/cliente@exemplo.com', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' }
+})
+.then(response =&gt; {
+    if(response.ok) {
+        alert('Lead excluído com sucesso!');
+    } else {
+        alert('Falha ao excluir lead.');
+    }
+})
+.catch(error =&gt; console.error(error));</code></pre>
+
+<h2>4. Confirmação e logs</h2>
+<p>Após a exclusão, será gerado apenas um registro de ação (log), sem armazenar os dados pessoais do lead, garantindo rastreabilidade e conformidade legal.</p>
+
+<h2>5. Prazo de atendimento</h2>
+<p>Todas as solicitações de exclusão serão processadas dentro de 5 dias úteis após recebimento da requisição.</p>
+
+<h2>6. Contato</h2>
+<p>Para dúvidas adicionais ou suporte sobre exclusão de dados, entre em contato:</p>
+<p><strong>Email:</strong> suporte@seudominio.com</p>
+
+<div class="footer">
+<p>© 2026 Seu Negócio Digital – Todos os direitos reservados</p>
+</div>
+
+</div>
+
+<script>
+document.getElementById("data").innerText = new Date().toLocaleDateString("pt-BR");
+</script>
+
+</body>
+</html>
