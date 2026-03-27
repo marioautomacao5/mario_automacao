@@ -44,16 +44,25 @@ form button { cursor:pointer; }
 .slide-in { opacity:0; transform: translateX(-30px); transition: all 0.8s ease-out; }
 .in-view { opacity:1; transform:translate(0,0); }  
 
-/* Portfólio: uniformizar tamanho dos cards */
+/* Portfólio: uniformizar tamanho de todos os cards */
+#portfolio .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
 #portfolio .card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 350px;   /* mesmo tamanho dos outros cards */
+    height: 380px;  /* altura uniforme */
 }
 
 #portfolio .card-media {
     width: 100%;
-    height: 200px; /* altura padrão para todos os cards */
+    height: 200px; /* altura da mídia dentro do card */
     overflow: hidden;
     border-radius: 12px;
     margin-bottom: 15px;
@@ -63,6 +72,6 @@ form button { cursor:pointer; }
 #portfolio .card-media video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* preenche mantendo proporção e cortando excesso */
+    object-fit: cover; /* garante que a mídia preencha o card sem deformar */
     display: block;
 }
