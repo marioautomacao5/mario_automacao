@@ -1,80 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Home Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background-color: #0077cc;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        main a {
-            display: block;
-            margin: 10px 0;
-            padding: 15px 25px;
-            text-decoration: none;
-            color: white;
-            background-color: #0077cc;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        main a:hover {
-            background-color: #005fa3;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-        footer a {
-            color: #ffcc00;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio Freelance - Soluções Digitais</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<!-- Ícone WhatsApp -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Bem-vindo à Minha Página</h1>
-    </header>
 
-    <main>
-        <h2>Escolha uma página para visitar:</h2>
-        <a href="pagina1.html">Página 1</a>
-        <a href="pagina2.html">Página 2</a>
-        <a href="pagina3.html">Página 3</a>
-    </main>
+<!-- Header / Hero -->
+<header class="hero">
+    <div class="container">
+        <h1 class="fade-in">Transformando dados em soluções digitais criativas</h1>
+        <p class="fade-in">Automatização de tarefas, análise e visualização de dados industriais.</p>
+        <a href="#contato" class="cta-button fade-in">Vamos Conversar</a>
+        <a href="https://wa.me/5511999999999" class="whatsapp-button fade-in" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    </div>
+</header>
 
-    <footer>
+<!-- Sobre -->
+<section id="sobre" class="section fade-in">
+    <div class="container">
+        <h2>Sobre Mim</h2>
+        <p>Sou especialista em desenvolver soluções digitais que automatizam processos repetitivos, analisam e visualizam dados industriais, ajudando empresas a tomarem decisões rápidas e precisas.</p>
+    </div>
+</section>
+
+<!-- Serviços -->
+<section id="servicos" class="section bg-light">
+    <div class="container">
+        <h2 class="fade-in">Serviços</h2>
+        <div class="cards">
+            <div class="card slide-in">
+                <h3>Automação de Processos</h3>
+                <p>Reduza tarefas repetitivas e ganhe tempo com sistemas inteligentes e scripts eficientes.</p>
+            </div>
+            <div class="card slide-in">
+                <h3>Análise de Dados</h3>
+                <p>Transformo grandes volumes de dados industriais em insights claros e acionáveis.</p>
+            </div>
+            <div class="card slide-in">
+                <h3>Visualização de Dados</h3>
+                <p>Dashboards interativos e relatórios visuais que facilitam a tomada de decisão.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio / Exemplos -->
+<section id="portfolio" class="section fade-in">
+    <div class="container">
+        <h2>Exemplos de Projetos</h2>
+        <div class="cards">
+            <div class="card slide-in">
+                <h3>Dashboard Industrial</h3>
+                <p>Visualização em tempo real de KPIs e métricas de produção.</p>
+            </div>
+            <div class="card slide-in">
+                <h3>Automação de Relatórios</h3>
+                <p>Redução de 80% do tempo gasto com relatórios manuais.</p>
+            </div>
+            <div class="card slide-in">
+                <h3>Sistema de Alertas</h3>
+                <p>Notificações automáticas para falhas em processos críticos.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Depoimentos -->
+<section id="depoimentos" class="section bg-light fade-in">
+    <div class="container">
+        <h2>Depoimentos</h2>
+        <div class="cards">
+            <div class="card slide-in">
+                <p>"As soluções implementadas melhoraram drasticamente nossa eficiência. Profissional altamente qualificado."</p>
+                <strong>- Cliente A</strong>
+            </div>
+            <div class="card slide-in">
+                <p>"Automação de relatórios nos economizou horas de trabalho semanal. Recomendado!"</p>
+                <strong>- Cliente B</strong>
+            </div>
+            <div class="card slide-in">
+                <p>"Dashboard visual e interativo transformou nossa tomada de decisão. Excelente trabalho."</p>
+                <strong>- Cliente C</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contato / Captura de Leads -->
+<section id="contato" class="section fade-in">
+    <div class="container cta">
+        <h2>Quer transformar seus processos com soluções digitais?</h2>
+        <p>Preencha o formulário e vamos criar algo incrível juntos!</p>
+        <form id="leadForm">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+            <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+            <button type="submit" class="cta-button">Enviar</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
         <p>
             <a href="terms.html">Termos de Uso</a> | 
             <a href="privacy-policy.html">Política de Privacidade</a>
         </p>
-        <p>© 2026 Minha Empresa. Todos os direitos reservados.</p>
-    </footer>
+        <p>&copy; 2026 Meu Portfólio Freelance. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
